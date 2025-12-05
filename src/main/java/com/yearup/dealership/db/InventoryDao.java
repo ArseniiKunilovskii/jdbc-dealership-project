@@ -17,8 +17,8 @@ public class InventoryDao {
         try(Connection connection = dataSource.getConnection();
             PreparedStatement statement = connection.prepareStatement("""
                     insert into inventory (dealership_id,vin) values (?,?)""")){
-            statement.setString(1,vin);
-            statement.setInt(2, dealershipId);
+            statement.setInt(1,dealershipId);
+            statement.setString(2, vin);
             statement.execute();
         } catch (Exception e){
             e.printStackTrace();
